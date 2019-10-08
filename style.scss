@@ -1,0 +1,185 @@
+// Media quéries
+// Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+// @media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) { ... }
+
+/* Add fonts */
+@font-face {
+    font-family: 'StrongGlasgow';
+    src: url(assets/fonts/StrongGlasgow.ttf);
+}
+
+
+/* Variables */
+
+$poppins: 'Poppins',
+sans-serif;
+$glasgow: 'StrongGlasgow';
+
+$black : #1D2223;
+$brown : #533c42;
+$white: #fff;
+
+$high : 30px;
+$little : 10px;
+
+/* General rules */
+
+body {
+    background: $black;
+    font-family: $glasgow;
+    color: $white;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $white;
+
+    &:hover {
+        border-bottom: 1px;
+        color: #1D2223;
+    }
+}
+
+/* Specific rules */
+
+#header-page {
+    height: 30vh;
+    padding-top: 20px;
+
+    #content-logo {
+        img {
+            height: 15%;
+            width: 15%;
+        }
+    }
+}
+
+#accueil {
+    height: 60vh;
+
+    section {
+
+        #content-accueil {
+
+            #content-actualites {
+
+                .row {
+
+                    .news,
+                    .tour {
+                        transform: scale(1, 1);
+                        transition: all 0.3s ease-in-out;
+
+                        h2 {
+                            font-size: 35px;
+                            margin-bottom: 30px;
+                        }
+
+                        a {
+
+                            img {
+                                width: 425px;
+                                height: 300px;
+                            }
+                        }
+
+                        &:hover {
+                            transform: scale(1.1, 1.1);
+                            transition: all 0.3s ease-in-out;
+                        }
+                       
+                    }
+
+                    .news::after {
+                        content: "";
+                        position: absolute;
+                        left: 3.1%;
+                        height: 300px;
+                        width: 88.6%;
+                        background-color: rgba(0, 0, 0, 0);
+                    }
+
+                    .news:hover::after {
+                        background-color: rgba(0, 0, 0, 0.8);
+                    }
+
+                    .tour::after {
+                        content: "";
+                        position: absolute;
+                        right: 8.3%;
+                        height: 300px;
+                        width: 88.6%;
+                        background-color: rgba(0, 0, 0, 0);
+                    }
+
+                    .tour:hover::after {
+                        background-color: rgba(0, 0, 0, 0.8);
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+#cover_page {
+    height: 100vh;
+    font-size: 80px;
+
+    #cover_album {
+        background-image: url(assets/img/album.svg);
+        background-size: 75% auto;
+        background-position-x: center;
+        background-repeat: no-repeat;
+        height: 100%;
+
+        .row {
+            height: 100%;
+
+            #content-logo {
+                img {
+                    height: 100%;
+                    width: 25%;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    height: 10vh;
+
+    .container {
+        .row {
+            li {
+                list-style: none;
+
+                a {
+
+                    i {
+                        color: $brown;
+                        font-size: 50px;
+
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

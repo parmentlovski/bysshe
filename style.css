@@ -1,0 +1,136 @@
+/* Add fonts */
+@font-face {
+  font-family: 'StrongGlasgow';
+  src: url(assets/fonts/StrongGlasgow.ttf);
+}
+
+/* Variables */
+/* General rules */
+body {
+  background: #1D2223;
+  font-family: "StrongGlasgow";
+  color: #fff;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  border-bottom: 1px;
+  color: #1D2223;
+}
+
+/* Specific rules */
+#header-page {
+  height: 30vh;
+  padding-top: 20px;
+}
+
+#header-page #content-logo img {
+  height: 15%;
+  width: 15%;
+}
+
+#accueil {
+  height: 60vh;
+}
+
+#accueil section #content-accueil #content-actualites .row .news,
+#accueil section #content-accueil #content-actualites .row .tour {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#accueil section #content-accueil #content-actualites .row .news h2,
+#accueil section #content-accueil #content-actualites .row .tour h2 {
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+#accueil section #content-accueil #content-actualites .row .news a img,
+#accueil section #content-accueil #content-actualites .row .tour a img {
+  width: 425px;
+  height: 300px;
+}
+
+#accueil section #content-accueil #content-actualites .row .news:hover,
+#accueil section #content-accueil #content-actualites .row .tour:hover {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#accueil section #content-accueil #content-actualites .row .news::after {
+  content: "";
+  position: absolute;
+  left: 3.1%;
+  height: 300px;
+  width: 88.6%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#accueil section #content-accueil #content-actualites .row .news:hover::after {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#accueil section #content-accueil #content-actualites .row .tour::after {
+  content: "";
+  position: absolute;
+  right: 8.3%;
+  height: 300px;
+  width: 88.6%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#accueil section #content-accueil #content-actualites .row .tour:hover::after {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#cover_page {
+  height: 100vh;
+  font-size: 80px;
+}
+
+#cover_page #cover_album {
+  background-image: url(assets/img/album.svg);
+  background-size: 75% auto;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+#cover_page #cover_album .row {
+  height: 100%;
+}
+
+#cover_page #cover_album .row #content-logo img {
+  height: 100%;
+  width: 25%;
+}
+
+footer {
+  height: 10vh;
+}
+
+footer .container .row li {
+  list-style: none;
+}
+
+footer .container .row li a i {
+  color: #533c42;
+  font-size: 50px;
+}
+
+footer .container .row li a i:hover {
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */
