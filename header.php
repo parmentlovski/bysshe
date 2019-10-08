@@ -18,7 +18,24 @@
 <body class="container-fluid">
 
     <header id="header-page">
-        <div id="content-logo" class="d-flex justify-content-center">
-            <img src="wp-content/themes/bysshe/assets/img/bysshewhite.png" alt="logo du groupe Bysshe Band" height="1031" width="1181">
+        <div class="row d-flex justify-content-center">
+            <div id="content-logo">
+                <img src="wp-content/themes/bysshe/assets/img/bysshewhite.png" alt="logo du groupe Bysshe Band" height="1031" width="1181">
+            </div>
+            <div class="burger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </div>
+        <div class="content-menu">
+            <ul>
+                <li>HOME</li>
+                <li>BIO</li>
+                <li>VIDEO</li>
+                <li>MUSIC</li>
+                <li>TOUR</li>
+                <li>BOUTIQUE</li>
+            </ul>
         </div>
     </header>

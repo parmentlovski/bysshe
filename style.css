@@ -28,17 +28,80 @@ a:hover {
 
 /* Specific rules */
 #header-page {
-  height: 30vh;
+  height: 25vh;
   padding-top: 20px;
 }
 
 #header-page #content-logo img {
-  height: 15%;
-  width: 15%;
+  height: 175px;
+  width: 175px;
+}
+
+#header-page .burger {
+  margin-top: 35px;
+  cursor: pointer;
+}
+
+#header-page .burger .line {
+  width: 50px;
+  height: 5px;
+  background-color: #ecf0f1;
+  display: block;
+  margin: 8px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#header-page .is-active {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+#header-page .is-active .line:nth-child(2) {
+  -webkit-transition: none;
+  transition: none;
+}
+
+#header-page .is-active .line:nth-child(2) {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+#header-page .is-active .line:nth-child(2) {
+  opacity: 0;
+}
+
+#header-page .is-active .line:nth-child(1),
+#header-page .is-active .line:nth-child(3) {
+  width: 35px;
+  -webkit-transform-origin: right;
+  transform-origin: right;
+}
+
+#header-page .is-active .line:nth-child(1) {
+  -webkit-transform: translateY(15px) rotate(45deg);
+  transform: translateY(15px) rotate(45deg);
+}
+
+#header-page .is-active .line:nth-child(3) {
+  -webkit-transform: translateY(-15px) rotate(-45deg);
+  transform: translateY(-15px) rotate(-45deg);
+}
+
+#header-page .content-menu {
+  display: none;
 }
 
 #accueil {
-  height: 60vh;
+  height: 65vh;
+}
+
+#accueil section #content-accueil #content-actualites .row div:first-child {
+  padding-left: 5.3%;
+}
+
+#accueil section #content-accueil #content-actualites .row div:last-child {
+  padding-right: 5.3%;
 }
 
 #accueil section #content-accueil #content-actualites .row .news,
@@ -55,44 +118,26 @@ a:hover {
   margin-bottom: 30px;
 }
 
-#accueil section #content-accueil #content-actualites .row .news a img,
-#accueil section #content-accueil #content-actualites .row .tour a img {
-  width: 425px;
-  height: 300px;
+#accueil section #content-accueil #content-actualites .row .news span,
+#accueil section #content-accueil #content-actualites .row .tour span {
+  display: inline-block;
+  background-color: #fff;
 }
 
-#accueil section #content-accueil #content-actualites .row .news:hover,
-#accueil section #content-accueil #content-actualites .row .tour:hover {
-  -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
+#accueil section #content-accueil #content-actualites .row .news span a img,
+#accueil section #content-accueil #content-actualites .row .tour span a img {
+  width: 500px;
+  height: 350px;
+}
+
+#accueil section #content-accueil #content-actualites .row .news span:hover,
+#accueil section #content-accueil #content-actualites .row .tour span:hover {
+  -webkit-transform: scale(1.05, 1.05);
+          transform: scale(1.05, 1.05);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-}
-
-#accueil section #content-accueil #content-actualites .row .news::after {
-  content: "";
-  position: absolute;
-  left: 3.1%;
-  height: 300px;
-  width: 88.6%;
-  background-color: rgba(0, 0, 0, 0);
-}
-
-#accueil section #content-accueil #content-actualites .row .news:hover::after {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-#accueil section #content-accueil #content-actualites .row .tour::after {
-  content: "";
-  position: absolute;
-  right: 8.3%;
-  height: 300px;
-  width: 88.6%;
-  background-color: rgba(0, 0, 0, 0);
-}
-
-#accueil section #content-accueil #content-actualites .row .tour:hover::after {
-  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-filter: contrast(175%) brightness(23%);
+          filter: contrast(175%) brightness(23%);
 }
 
 #cover_page {
@@ -121,16 +166,22 @@ footer {
   height: 10vh;
 }
 
-footer .container .row li {
-  list-style: none;
-}
-
-footer .container .row li a i {
-  color: #533c42;
+footer .container .reseaux li a i {
+  color: #8B9F93;
   font-size: 50px;
 }
 
-footer .container .row li a i:hover {
+footer .container .reseaux li a i:hover {
   color: #fff;
+}
+
+footer .container .copyright {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+footer .container .copyright li {
+  display: none;
+  color: #8B9F93;
 }
 /*# sourceMappingURL=style.css.map */

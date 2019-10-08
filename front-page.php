@@ -1,3 +1,4 @@
+<?php get_header('frontpage'); ?>
 <main id="cover_page" class="container-fluid">
     <section id="cover_album" class="container">
         <div class="row d-flex flex-column justify-content-between">
@@ -12,5 +13,4 @@
         </div>
     </section>
 </main>
-
-<?php require('template-frontpage.php'); ?>
+<?php get_footer('frontpage'); ?>
