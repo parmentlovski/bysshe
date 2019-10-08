@@ -17,16 +17,92 @@ li {
 }
 
 a {
-  text-decoration: none;
   color: #fff;
 }
 
 a:hover {
-  border-bottom: 1px;
-  color: #1D2223;
+  text-decoration: none;
+  color: #fff;
 }
 
 /* Specific rules */
+/* cover page */
+#cover_page {
+  height: 100vh;
+  font-size: 65px;
+}
+
+#cover_page #cover_album {
+  background-image: url(assets/img/album.svg);
+  background-size: 70.5% auto;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+#cover_page #cover_album .row {
+  height: 100%;
+}
+
+#cover_page #cover_album .row #content-logo {
+  margin-top: 20px;
+}
+
+#cover_page #cover_album .row #content-logo img {
+  height: 215px;
+  width: 215px;
+}
+
+#cover_page #cover_album .row ul {
+  margin-bottom: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#cover_page #cover_album .row ul li {
+  display: inline-block;
+  position: relative;
+  padding: 5px 0;
+}
+
+#cover_page #cover_album .row ul li .effect-btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+#cover_page #cover_album .row ul li .effect-btn:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+#cover_page #cover_album .row ul li .effect-btn:hover:before, #cover_page #cover_album .row ul li .effect-btn:hover:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+/* header */
 #header-page {
   height: 25vh;
   padding-top: 20px;
@@ -92,6 +168,7 @@ a:hover {
   display: none;
 }
 
+/* home */
 #accueil {
   height: 65vh;
 }
@@ -140,28 +217,7 @@ a:hover {
           filter: contrast(175%) brightness(23%);
 }
 
-#cover_page {
-  height: 100vh;
-  font-size: 80px;
-}
-
-#cover_page #cover_album {
-  background-image: url(assets/img/album.svg);
-  background-size: 75% auto;
-  background-position-x: center;
-  background-repeat: no-repeat;
-  height: 100%;
-}
-
-#cover_page #cover_album .row {
-  height: 100%;
-}
-
-#cover_page #cover_album .row #content-logo img {
-  height: 100%;
-  width: 25%;
-}
-
+/* footer */
 footer {
   height: 10vh;
 }
