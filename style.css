@@ -116,6 +116,9 @@ a:hover {
 #header-page .burger {
   margin-top: 35px;
   cursor: pointer;
+  position: absolute;
+  right: 5%;
+  top: 2%;
 }
 
 #header-page .burger .line {
@@ -166,11 +169,197 @@ a:hover {
 
 #header-page .content-menu {
   display: none;
+  font-family: "Poppins", sans-serif;
+}
+
+#header-page .content-menu .menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 7%;
+}
+
+#header-page .content-menu .menu ul li {
+  font-size: 40px;
+  margin-bottom: 7px;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  padding: 7px 0;
+  color: #fff;
+}
+
+#header-page .content-menu .menu ul li:first-child {
+  width: 30%;
+}
+
+#header-page .content-menu .menu ul li:nth-child(2) {
+  width: 12%;
+}
+
+#header-page .content-menu .menu ul li:nth-child(3) {
+  width: 23%;
+}
+
+#header-page .content-menu .menu ul li:nth-child(4) {
+  width: 23%;
+}
+
+#header-page .content-menu .menu ul li:nth-child(5) {
+  width: 18%;
+}
+
+#header-page .content-menu .menu ul li:last-child {
+  width: 37%;
+}
+
+#header-page .content-menu .menu ul li a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  background-color: #8B9F93;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+#header-page .content-menu .menu ul li a:hover:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+#header-page .content-menu .form form legend {
+  margin-bottom: 50px;
+}
+
+#header-page .content-menu .form form .form-group input {
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-bottom: 1px solid #8B9F93;
+  background-color: transparent;
+  color: #fff;
+  height: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+
+#header-page .content-menu .form form .form-group textarea {
+  border: none !important;
+  height: auto;
+  background-color: transparent;
+  border-bottom: 1px solid #8B9F93;
+  color: #8B9F93;
+  line-height: 1.5;
+  outline: none;
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  background: none;
+}
+
+#header-page .content-menu .form form .send button {
+  display: inline-block;
+  position: relative;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+#header-page .content-menu .form form .send span {
+  display: block;
+  padding: 2px 7px;
+}
+
+#header-page .content-menu .form form .send button::before,
+#header-page .content-menu .form form .send button::after {
+  content: "";
+  width: 0;
+  height: 1px;
+  position: absolute;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  background: #fff;
+}
+
+#header-page .content-menu .form form .send span::before,
+#header-page .content-menu .form form .send span::after {
+  content: "";
+  width: 2px;
+  height: 0;
+  position: absolute;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  background: #fff;
+}
+
+#header-page .content-menu .form form .send button:hover::before,
+#header-page .content-menu .form form .send button:hover::after {
+  width: 100%;
+}
+
+#header-page .content-menu .form form .send button:hover span::before,
+#header-page .content-menu .form form .send button:hover span::after {
+  height: 100%;
+}
+
+#header-page .content-menu .form form .send .btn-6::before {
+  left: 50%;
+  top: 0;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+#header-page .content-menu .form form .send .btn-6::after {
+  left: 50%;
+  bottom: 0;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+#header-page .content-menu .form form .send .btn-6 span::before {
+  left: 0;
+  top: 50%;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+#header-page .content-menu .form form .send .btn-6 span::after {
+  right: 0;
+  top: 50%;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+#header-page .content-menu .form form .send .btn-6:hover::before,
+#header-page .content-menu .form form .send .btn-6:hover::after {
+  left: 0;
+}
+
+#header-page .content-menu .form form .send .btn-6:hover span::before,
+#header-page .content-menu .form form .send .btn-6:hover span::after {
+  top: 0;
 }
 
 /* home */
 #accueil {
-  height: 65vh;
+  height: 64vh;
 }
 
 #accueil section #content-accueil #content-actualites .row div:first-child {
@@ -219,25 +408,34 @@ a:hover {
 
 /* footer */
 footer {
-  height: 10vh;
+  height: 11vh;
 }
 
-footer .container .reseaux li a i {
+footer .container .content-reseaux li a i {
   color: #8B9F93;
   font-size: 50px;
 }
 
-footer .container .reseaux li a i:hover {
+footer .container .content-reseaux li a i:hover {
   color: #fff;
 }
 
-footer .container .copyright {
+footer .container .content-copyright {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
 }
 
-footer .container .copyright li {
+footer .container .content-copyright li {
+  padding-top: 30px;
   display: none;
   color: #8B9F93;
+}
+
+footer .container .content-copyright li a {
+  color: #8B9F93;
+}
+
+footer .container .content-copyright li a:hover {
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */

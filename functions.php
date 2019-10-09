@@ -24,3 +24,44 @@ function register_my_menu()
 };
 
 add_action('init', 'register_my_menu');
+
+
+##################################### MAIL #################################
+
+function contact_form()
+{
+global $wp;
+
+if (isset($_POST['message-submit']) && $_POST['hidden'] === "1") {
+
+$name = sanitize_text_field($_POST['name']);
+
+$email = sanitize_email($_POST['email']);
+
+
+$message = sanitize_text_field($_POST['message']);
+
+
+
+$admin_email = get_option('admin_email');
+
+
+$headers = "From: \"" . $name . "\" <" . $email . ">\r\n";
+
+
+$sujet = 'Vous recevez un message';
+
+$envoie = mail ($admin_email, $sujet, $message, $headers);
+
+$textSend = ($envoie === true) ? 'sent' : 'notSent';
+
+
+$wp->add_query_var('send');
+$url = get_page_by_title('home');
+wp_redirect(get_permalink($url) . '?send=' . $textSend);
+
+exit();
+}
+}
+
+add_action('init', 'contact_form'); 
