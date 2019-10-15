@@ -33,7 +33,7 @@ a:hover {
 }
 
 #cover_page #cover_album {
-  background-image: url(assets/img/album.svg);
+  background-image: url(assets/img/album.png);
   background-size: 70.5% auto;
   background-position-x: center;
   background-repeat: no-repeat;
@@ -249,7 +249,7 @@ a:hover {
   border-bottom: 1px solid #8B9F93;
   background-color: transparent;
   color: #fff;
-  height: 20px;
+  height: 30px;
   margin-bottom: 30px;
   padding-bottom: 10px;
 }
@@ -282,13 +282,7 @@ a:hover {
   margin-top: 40px;
 }
 
-#header-page .content-menu .form form .send span {
-  display: block;
-  padding: 2px 7px;
-}
-
-#header-page .content-menu .form form .send button::before,
-#header-page .content-menu .form form .send button::after {
+#header-page .content-menu .form form .send button::before, #header-page .content-menu .form form .send button::after {
   content: "";
   width: 0;
   height: 1px;
@@ -298,8 +292,37 @@ a:hover {
   background: #fff;
 }
 
-#header-page .content-menu .form form .send span::before,
-#header-page .content-menu .form form .send span::after {
+#header-page .content-menu .form form .send button::before {
+  left: 50%;
+  top: 0;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+#header-page .content-menu .form form .send button::after {
+  left: 50%;
+  bottom: 0;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+#header-page .content-menu .form form .send button:hover::before, #header-page .content-menu .form form .send button:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+#header-page .content-menu .form form .send button:hover span::before,
+#header-page .content-menu .form form .send button:hover span::after {
+  height: 100%;
+  top: 0;
+}
+
+#header-page .content-menu .form form .send button span {
+  display: block;
+  padding: 2px 7px;
+}
+
+#header-page .content-menu .form form .send button span::before, #header-page .content-menu .form form .send button span::after {
   content: "";
   width: 2px;
   height: 0;
@@ -309,52 +332,18 @@ a:hover {
   background: #fff;
 }
 
-#header-page .content-menu .form form .send button:hover::before,
-#header-page .content-menu .form form .send button:hover::after {
-  width: 100%;
-}
-
-#header-page .content-menu .form form .send button:hover span::before,
-#header-page .content-menu .form form .send button:hover span::after {
-  height: 100%;
-}
-
-#header-page .content-menu .form form .send .btn-6::before {
-  left: 50%;
-  top: 0;
-  -webkit-transition-duration: 0.4s;
-          transition-duration: 0.4s;
-}
-
-#header-page .content-menu .form form .send .btn-6::after {
-  left: 50%;
-  bottom: 0;
-  -webkit-transition-duration: 0.4s;
-          transition-duration: 0.4s;
-}
-
-#header-page .content-menu .form form .send .btn-6 span::before {
+#header-page .content-menu .form form .send button span::before {
   left: 0;
   top: 50%;
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
 }
 
-#header-page .content-menu .form form .send .btn-6 span::after {
+#header-page .content-menu .form form .send button span::after {
   right: 0;
   top: 50%;
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
-}
-
-#header-page .content-menu .form form .send .btn-6:hover::before,
-#header-page .content-menu .form form .send .btn-6:hover::after {
-  left: 0;
-}
-
-#header-page .content-menu .form form .send .btn-6:hover span::before,
-#header-page .content-menu .form form .send .btn-6:hover span::after {
-  top: 0;
 }
 
 /* home */
@@ -370,40 +359,177 @@ a:hover {
   padding-right: 5.3%;
 }
 
-#accueil section #content-accueil #content-actualites .row .news,
-#accueil section #content-accueil #content-actualites .row .tour {
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
 #accueil section #content-accueil #content-actualites .row .news h2,
 #accueil section #content-accueil #content-actualites .row .tour h2 {
   font-size: 35px;
   margin-bottom: 30px;
 }
 
-#accueil section #content-accueil #content-actualites .row .news span,
-#accueil section #content-accueil #content-actualites .row .tour span {
-  display: inline-block;
-  background-color: #fff;
-}
-
-#accueil section #content-accueil #content-actualites .row .news span a img,
-#accueil section #content-accueil #content-actualites .row .tour span a img {
+#accueil section #content-accueil #content-actualites .row #content-news,
+#accueil section #content-accueil #content-actualites .row #content-tour {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   width: 500px;
   height: 350px;
+  margin-top: 30px;
+  background-position-x: center;
+  background-repeat: no-repeat;
 }
 
-#accueil section #content-accueil #content-actualites .row .news span:hover,
-#accueil section #content-accueil #content-actualites .row .tour span:hover {
+#accueil section #content-accueil #content-actualites .row #content-news:hover,
+#accueil section #content-accueil #content-actualites .row #content-tour:hover {
   -webkit-transform: scale(1.05, 1.05);
           transform: scale(1.05, 1.05);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  -webkit-filter: contrast(175%) brightness(23%);
-          filter: contrast(175%) brightness(23%);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-filter: brightness(30%);
+          filter: brightness(30%);
+}
+
+#accueil section #content-accueil #content-actualites .row .news #content-news {
+  background-image: url(assets/img/news.jpg);
+  background-size: 100% auto;
+}
+
+#accueil section #content-accueil #content-actualites .row .news #content-news .list-news {
+  font-family: "Poppins", sans-serif;
+  opacity: 0;
+}
+
+#accueil section #content-accueil #content-actualites .row .news #content-news:hover .list-news {
+  opacity: 1;
+}
+
+#accueil section #content-accueil #content-actualites .row .tour {
+  font-family: "Poppins", sans-serif;
+}
+
+#accueil section #content-accueil #content-actualites .row .tour #content-tour {
+  background-image: url(assets/img/tour.jpg);
+  background-size: 140% auto;
+}
+
+#accueil section #content-accueil #content-actualites .row .tour .list-tour {
+  font-family: "Poppins", sans-serif;
+}
+
+#accueil section #content-accueil #content-actualites .row .tour .list-tour li {
+  margin-right: 3%;
+}
+
+/* tour */
+#tour {
+  font-family: "Poppins", sans-serif;
+  margin: 5% 0;
+}
+
+#tour .container h2 {
+  font-family: "StrongGlasgow";
+  font-size: 40px;
+}
+
+#tour .container .row {
+  margin: 2% 0 4% 0;
+}
+
+#tour .container .row .col-6 .list-tour {
+  border-bottom: 1px solid #8B9F93;
+  padding: 10px 0;
+}
+
+#tour .container .row .col-6 .list-tour #date {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+#tour .container .row .col-6 .list-tour #localisation {
+  font-size: 15px;
+  padding-left: 5%;
+}
+
+#tour .container .row .col-6 .list-tour #localisation #city-and-country {
+  color: #8B9F93;
+  font-size: 14px;
+}
+
+#tour .container .row .col-6 .list-tour a {
+  padding: 2px 4px;
+  display: inline-block;
+  position: absolute;
+  right: 2.8%;
+  background: transparent;
+  color: #fff;
+  font-size: 10px;
+}
+
+#tour .container .row .col-6 .list-tour a::before, #tour .container .row .col-6 .list-tour a::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  background: #fff;
+}
+
+#tour .container .row .col-6 .list-tour a::before {
+  left: 0;
+  top: 0;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+#tour .container .row .col-6 .list-tour a::after {
+  left: 0;
+  bottom: 0;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+#tour .container .row .col-6 .list-tour a:hover::before, #tour .container .row .col-6 .list-tour a:hover::after {
+  left: 50%;
+  height: 1px;
+  width: 0;
+}
+
+#tour .container .row .col-6 .list-tour a:hover span::before,
+#tour .container .row .col-6 .list-tour a:hover span::after {
+  top: 50%;
+  width: 1px;
+  height: 0;
+}
+
+#tour .container .row .col-6 .list-tour a span {
+  display: block;
+  padding: 2px 7px;
+}
+
+#tour .container .row .col-6 .list-tour a span::before, #tour .container .row .col-6 .list-tour a span::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  background: #fff;
+}
+
+#tour .container .row .col-6 .list-tour a span::before {
+  left: 0;
+  top: 0;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+#tour .container .row .col-6 .list-tour a span::after {
+  right: 0;
+  top: 0;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
 /* footer */

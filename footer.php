@@ -12,7 +12,7 @@
                 <a href="cgv">CGV</a>
             </li>
             <li class="copyright col-4 text-center">
-                <a href="bryan-parmentelot.fr" target="_blank">Développé par Parmentelot Bryan</a>
+                <a href="https://bryan-parmentelot.fr" target="_blank">Développé par Parmentelot Bryan</a>
             </li>
         </ul>
     </div>

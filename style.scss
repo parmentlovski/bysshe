@@ -59,7 +59,7 @@ a {
     font-size: 65px;
 
     #cover_album {
-        background-image: url(assets/img/album.svg);
+        background-image: url(assets/img/album.png);
         background-size: 70.5% auto;
         background-position-x: center;
         background-repeat: no-repeat;
@@ -293,7 +293,7 @@ a {
                         border-bottom: 1px solid $bluegrey;
                         background-color: transparent;
                         color: $white;
-                        height: 20px;
+                        height: 30px;
                         margin-bottom: 30px;
                         padding-bottom: 10px;
                     }
@@ -332,76 +332,73 @@ a {
                         font-size: 18px;
                         cursor: pointer;
                         margin-top: 40px;
-                    }
 
-                    span {
-                        display: block;
-                        padding: 2px 7px;
-                    }
+                        &::before,
+                        &::after {
+                            content: "";
+                            width: 0;
+                            height: 1px;
+                            position: absolute;
+                            transition: all 0.2s linear;
+                            background: #fff;
+                        }
 
-                    button::before,
-                    button::after {
-                        content: "";
-                        width: 0;
-                        height: 1px;
-                        position: absolute;
-                        transition: all 0.2s linear;
-                        background: #fff;
-                    }
+                        &::before {
+                            left: 50%;
+                            top: 0;
+                            transition-duration: 0.4s;
+                        }
 
-                    span::before,
-                    span::after {
-                        content: "";
-                        width: 2px;
-                        height: 0;
-                        position: absolute;
-                        transition: all 0.2s linear;
-                        background: #fff;
-                    }
+                        &::after {
+                            left: 50%;
+                            bottom: 0;
+                            transition-duration: 0.4s;
+                        }
 
-                    button:hover::before,
-                    button:hover::after {
-                        width: 100%;
-                    }
+                        &:hover::before,
+                        &:hover::after {
+                            left: 0;
+                            width: 100%;
 
-                    button:hover span::before,
-                    button:hover span::after {
-                        height: 100%;
-                    }
+                        }
 
+                        &:hover {
 
-                    .btn-6::before {
-                        left: 50%;
-                        top: 0;
-                        transition-duration: 0.4s;
-                    }
+                            span::before,
+                            span::after {
+                                height: 100%;
+                                top: 0;
+                            }
+                        }
 
-                    .btn-6::after {
-                        left: 50%;
-                        bottom: 0;
-                        transition-duration: 0.4s;
-                    }
+                        span {
+                            display: block;
+                            padding: 2px 7px;
 
-                    .btn-6 span::before {
-                        left: 0;
-                        top: 50%;
-                        transition-duration: 0.4s;
-                    }
+                            &::before,
+                            &::after {
+                                content: "";
+                                width: 2px;
+                                height: 0;
+                                position: absolute;
+                                transition: all 0.2s linear;
+                                background: #fff;
+                            }
 
-                    .btn-6 span::after {
-                        right: 0;
-                        top: 50%;
-                        transition-duration: 0.4s;
-                    }
+                            &::before {
+                                left: 0;
+                                top: 50%;
+                                transition-duration: 0.4s;
+                            }
 
-                    .btn-6:hover::before,
-                    .btn-6:hover::after {
-                        left: 0;
-                    }
+                            &::after {
+                                right: 0;
+                                top: 50%;
+                                transition-duration: 0.4s;
+                            }
 
-                    .btn-6:hover span::before,
-                    .btn-6:hover span::after {
-                        top: 0;
+                        }
+
                     }
                 }
             }
@@ -433,30 +430,69 @@ a {
 
                     .news,
                     .tour {
-                        transform: scale(1, 1);
-                        transition: all 0.3s ease-in-out;
 
                         h2 {
                             font-size: 35px;
                             margin-bottom: 30px;
                         }
+                    }
 
-                        span {
-                            display: inline-block;
-                            background-color: $white;
+                    #content-news,
+                    #content-tour {
+                        transform: scale(1, 1);
+                        transition: all 0.3s ease-in-out;
+                        width: 500px;
+                        height: 350px;
+                        margin-top: 30px;
+                        background-position-x: center;
+                        background-repeat: no-repeat;
 
-                            a {
+                        &:hover {
+                            transform: scale(1.05, 1.05);
+                            transition: all 0.3s ease-in-out;
+                            filter: grayscale(100%);
+                            // background-color: rgba(0, 0, 0, 0.7);
+                            filter: brightness(30%);
 
-                                img {
-                                    width: 500px;
-                                    height: 350px;
-                                }
+                            // filter: saturate(200%);
+                            // filter: sepia(200%);
+
+                        }
+                    }
+
+                    .news {
+
+                        #content-news {
+                            background-image: url(assets/img/news.jpg);
+                            background-size: 100% auto;
+
+                            .list-news {
+                                font-family: $poppins;
+                                opacity: 0;
                             }
 
                             &:hover {
-                                transform: scale(1.05, 1.05);
-                                transition: all 0.3s ease-in-out;
-                                filter: contrast(175%) brightness(23%);
+                                .list-news {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+
+                    .tour {
+                        font-family: $poppins;
+
+
+                        #content-tour {
+                            background-image: url(assets/img/tour.jpg);
+                            background-size: 140% auto;
+                        }
+
+                        .list-tour {
+                            font-family: $poppins;
+
+                            li {
+                                margin-right: 3%;
                             }
                         }
                     }
@@ -466,6 +502,126 @@ a {
     }
 
 
+}
+
+/* tour */
+
+#tour {
+    font-family: $poppins;
+    margin: 5% 0;
+
+    .container {
+
+        h2 {
+            font-family: $glasgow;
+            font-size: 40px;
+        }
+
+        .row {
+            margin: 2% 0 4% 0;
+
+            .col-6 {
+                .list-tour {
+                    border-bottom: 1px solid $bluegrey;
+                    padding: 10px 0;
+
+                    #date {
+                        // padding-right: 4px;
+                        font-weight: bold;
+                        font-size: 15px;
+                    }
+
+                    #localisation {
+                        font-size: 15px;
+                        padding-left: 5%;
+
+                        #city-and-country {
+                            color: $bluegrey;
+                            font-size: 14px;
+                        }
+                    }
+
+                    a {
+                        // padding-left: 4px;
+                        padding: 2px 4px;
+                        display: inline-block;
+                        position: absolute;
+                        right: 2.8%;
+                        background: transparent;
+                        color: $white;
+                        font-size: 10px;
+
+                        &::before,
+                        &::after {
+                            content: "";
+                            width: 100%;
+                            height: 1px;
+                            position: absolute;
+                            transition: all 0.2s linear;
+                            background: #fff;
+                        }
+
+                        &::before {
+                            left: 0;
+                            top: 0;
+                            transition-duration: 0.4s;
+                        }
+
+                        &::after {
+                            left: 0;
+                            bottom: 0;
+                            transition-duration: 0.4s;
+                        }
+
+                        &:hover::before,
+                        &:hover::after {
+                            left: 50%;
+                            height: 1px;
+                            width: 0;
+
+                        }
+
+                        &:hover {
+
+                            span::before,
+                            span::after {
+                                top: 50%;
+                                width: 1px;
+                                height: 0;
+                            }
+                        }
+
+                        span {
+                            display: block;
+                            padding: 2px 7px;
+
+                            &::before,
+                            &::after {
+                                content: "";
+                                width: 1px;
+                                height: 100%;
+                                position: absolute;
+                                transition: all 0.2s linear;
+                                background: #fff;
+                            }
+
+                            &::before {
+                                left: 0;
+                                top: 0;
+                                transition-duration: 0.4s;
+                            }
+
+                            &::after {
+                                right: 0;
+                                top: 0;
+                                transition-duration: 0.4s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* footer */

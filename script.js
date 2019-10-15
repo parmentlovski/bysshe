@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() { 
     var burger = document.querySelector('.burger');
     var header = document.querySelector('#header-page');
-    var menu = document.querySelector('.content-menu');
-    var accueil = document.querySelector('#accueil');
+    var menu = document.querySelector('.content-menu'); // accueil
+    var displayMenu = document.querySelector('.display-menu');
     var reseaux = document.querySelectorAll('.reseaux');
     var copyrights = document.querySelectorAll('.copyright');
-    var footer = document.querySelector('footer');
 
     burger.addEventListener('click', function() {
         
@@ -14,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
        if(burger.classList.contains('is-active')) {
         header.style.height = "89vh";
         menu.style.display = "block";
-        accueil.style.display = "none";      
+        // templateMenu.style.display = "none";
+        displayMenu.style.display = "none";      
 
         reseaux.forEach(reseau => {
             reseau.style.display = "none";
@@ -28,7 +28,8 @@ document.addEventListener("DOMContentLoaded", function() {
        else {
         header.style.height = "25vh";
         menu.style.display = "none";
-        accueil.style.display = "block";
+        // templateMenu.style.display = "block";
+        displayMenu.style.display = "block";
         
         reseaux.forEach(reseau => {
             reseau.style.display = "block";
@@ -41,3 +42,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     });
   });
+
+  

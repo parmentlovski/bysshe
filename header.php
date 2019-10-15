@@ -20,7 +20,9 @@
     <header id="header-page">
         <div class="row justify-content-center">
             <div id="content-logo">
+                <a href="http://localhost:8888/bysshe/">
                 <img src="wp-content/themes/bysshe/assets/img/bysshewhite.png" alt="logo du groupe Bysshe Band" height="1031" width="1181">
+                </a>
             </div>
             <div class="burger">
                 <span class="line"></span>
@@ -47,8 +49,8 @@
                         <div class="form-group">
                             <input type="email" name="email" id="email" placeholder="Email">
                         </div>
-
-                        <!-- <div class="form-group">
+<!-- 
+                        <div class="form-group">
                             <input type="text" name="message" id="message" placeholder="Message">
                         </div> -->
 
@@ -58,11 +60,9 @@
                         </div>
 
                         <div class="send d-flex justify-content-center">
-                            <!-- <input name="message-submit" type="submit" id="form-submit" class="btnSend">
-                            <input type="hidden" name="hidden" value="1"> -->
-                            <button class="btn-6"><span>Envoyer</span></button>
+                            <button name="message-submit" type="submit" id="form-submit" class="btnSend"><span>Envoyer</span></button>
+                            <input type="hidden" name="hidden" value="1">
                         </div>
-                        
                         <?php
 
                         if (isset($_GET['send']) && $_GET['send'] === "sent") {
