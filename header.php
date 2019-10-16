@@ -32,10 +32,10 @@
         </div>
         <div class="content-menu">
             <div class="row">
-                <div class="menu offset-1 col-5">
+                <div class="menu col-12 offset-md-1 col-md-5">
                     <?php wp_nav_menu(); ?>
                 </div>
-                <div class="form col-6 d-flex flex-column align-items-center">
+                <div class="form col-12 col-md-6 d-flex flex-column align-items-center">
                     <form action="#" id="contactForm" method="post" class="">
                         <legend class="text-center">Contactez-nous</legend>
                         <div class="form-group">

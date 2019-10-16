@@ -34,8 +34,9 @@ a:hover {
 
 #cover_page #cover_album {
   background-image: url(assets/img/album.png);
-  background-size: 70.5% auto;
+  background-size: 69.25% auto;
   background-position-x: center;
+  background-position-y: center;
   background-repeat: no-repeat;
   height: 100%;
 }
@@ -53,6 +54,33 @@ a:hover {
   width: 215px;
 }
 
+#cover_page #cover_album .row #content-logo img:last-child {
+  display: none;
+}
+
+@media (max-width: 1025px) {
+  #cover_page #cover_album .row #content-logo img:first-child {
+    display: none;
+  }
+  #cover_page #cover_album .row #content-logo img:last-child {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1025px) {
+  #cover_page #cover_album .row #content-logo img {
+    height: 160px;
+    width: 160px;
+  }
+}
+
+@media (max-width: 767px) {
+  #cover_page #cover_album .row #content-logo img {
+    height: 100px;
+    width: 100px;
+  }
+}
+
 #cover_page #cover_album .row ul {
   margin-bottom: 40px;
   padding-left: 10%;
@@ -60,7 +88,6 @@ a:hover {
 }
 
 #cover_page #cover_album .row ul li {
-  display: inline-block;
   position: relative;
   padding: 5px 0;
 }
@@ -81,6 +108,12 @@ a:hover {
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
+@media (max-width: 1025px) {
+  #cover_page #cover_album .row ul li .effect-btn:before {
+    display: none;
+  }
+}
+
 #cover_page #cover_album .row ul li .effect-btn:after {
   content: '';
   position: absolute;
@@ -97,9 +130,39 @@ a:hover {
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
+@media (max-width: 1025px) {
+  #cover_page #cover_album .row ul li .effect-btn:after {
+    display: none;
+  }
+}
+
 #cover_page #cover_album .row ul li .effect-btn:hover:before, #cover_page #cover_album .row ul li .effect-btn:hover:after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
+}
+
+@media (max-width: 1025px) {
+  #cover_page #cover_album .row ul li .effect-btn:hover:before, #cover_page #cover_album .row ul li .effect-btn:hover:after {
+    display: none;
+  }
+}
+
+@media (max-width: 1025px) {
+  #cover_page #cover_album {
+    background-size: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 767px) {
+  #cover_page {
+    font-size: 47px;
+  }
+}
+
+@media (max-width: 767px) {
+  #cover_page {
+    font-size: 29px;
+  }
 }
 
 /* header */
@@ -346,17 +409,20 @@ a:hover {
           transition-duration: 0.4s;
 }
 
+@media (max-width: 991px) {
+  #header-page {
+    height: auto;
+  }
+}
+
 /* home */
 #accueil {
   height: 64vh;
 }
 
-#accueil section #content-accueil #content-actualites .row div:first-child {
-  padding-left: 5.3%;
-}
-
-#accueil section #content-accueil #content-actualites .row div:last-child {
+#accueil section #content-accueil #content-actualites .row {
   padding-right: 5.3%;
+  padding-left: 5.3%;
 }
 
 #accueil section #content-accueil #content-actualites .row .news h2,
@@ -365,60 +431,117 @@ a:hover {
   margin-bottom: 30px;
 }
 
+@media (max-width: 991px) {
+  #accueil section #content-accueil #content-actualites .row .news,
+  #accueil section #content-accueil #content-actualites .row .tour {
+    margin-top: 40px;
+  }
+}
+
 #accueil section #content-accueil #content-actualites .row #content-news,
 #accueil section #content-accueil #content-actualites .row #content-tour {
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  font-family: "Poppins", sans-serif;
   width: 500px;
   height: 350px;
-  margin-top: 30px;
+  padding-top: 30px;
   background-position-x: center;
   background-repeat: no-repeat;
 }
 
 #accueil section #content-accueil #content-actualites .row #content-news:hover,
 #accueil section #content-accueil #content-actualites .row #content-tour:hover {
-  -webkit-transform: scale(1.05, 1.05);
-          transform: scale(1.05, 1.05);
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-  -webkit-filter: brightness(30%);
-          filter: brightness(30%);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-#accueil section #content-accueil #content-actualites .row .news #content-news {
-  background-image: url(assets/img/news.jpg);
-  background-size: 100% auto;
+@media (max-width: 991px) {
+  #accueil section #content-accueil #content-actualites .row #content-news,
+  #accueil section #content-accueil #content-actualites .row #content-tour {
+    display: none;
+  }
 }
 
-#accueil section #content-accueil #content-actualites .row .news #content-news .list-news {
-  font-family: "Poppins", sans-serif;
+#accueil section #content-accueil #content-actualites .row #content-news-smartphone,
+#accueil section #content-accueil #content-actualites .row #content-tour-smartphone {
+  display: none;
+  padding: 5px;
+}
+
+#accueil section #content-accueil #content-actualites .row #content-news-smartphone h2,
+#accueil section #content-accueil #content-actualites .row #content-tour-smartphone h2 {
+  font-size: 15px;
+}
+
+@media (max-width: 991px) {
+  #accueil section #content-accueil #content-actualites .row #content-news-smartphone,
+  #accueil section #content-accueil #content-actualites .row #content-tour-smartphone {
+    font-family: "Poppins", sans-serif;
+    display: block;
+    width: 250px;
+    height: 175px;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+#accueil section #content-accueil #content-actualites .row .news {
+  font-family: "StrongGlasgow";
+}
+
+#accueil section #content-accueil #content-actualites .row .news div {
+  padding-right: 0;
+}
+
+#accueil section #content-accueil #content-actualites .row .news div #content-news .list-news {
   opacity: 0;
+  border-bottom: 1px dotted #8B9F93;
+  padding-top: 2.5%;
 }
 
-#accueil section #content-accueil #content-actualites .row .news #content-news:hover .list-news {
+#accueil section #content-accueil #content-actualites .row .news div #content-news .list-news:last-child {
+  border: none;
+}
+
+@media (max-width: 991px) {
+  #accueil section #content-accueil #content-actualites .row .news div #content-news .list-news {
+    opacity: 1;
+  }
+}
+
+#accueil section #content-accueil #content-actualites .row .news div #content-news:hover .list-news {
   opacity: 1;
 }
 
 #accueil section #content-accueil #content-actualites .row .tour {
+  font-family: "StrongGlasgow";
+}
+
+#accueil section #content-accueil #content-actualites .row .tour div {
+  padding-right: 0;
+}
+
+#accueil section #content-accueil #content-actualites .row .tour div #content-tour .list-tour {
   font-family: "Poppins", sans-serif;
+  opacity: 0;
 }
 
-#accueil section #content-accueil #content-actualites .row .tour #content-tour {
-  background-image: url(assets/img/tour.jpg);
-  background-size: 140% auto;
-}
-
-#accueil section #content-accueil #content-actualites .row .tour .list-tour {
-  font-family: "Poppins", sans-serif;
-}
-
-#accueil section #content-accueil #content-actualites .row .tour .list-tour li {
+#accueil section #content-accueil #content-actualites .row .tour div #content-tour .list-tour li {
   margin-right: 3%;
+  margin-top: 4.5%;
+}
+
+@media (max-width: 991px) {
+  #accueil section #content-accueil #content-actualites .row .tour div #content-tour .list-tour {
+    opacity: 1;
+  }
+}
+
+#accueil section #content-accueil #content-actualites .row .tour div #content-tour:hover .list-tour {
+  opacity: 1;
+}
+
+@media (max-width: 991px) {
+  #accueil {
+    height: auto;
+  }
 }
 
 /* tour */
@@ -532,9 +655,22 @@ a:hover {
           transition-duration: 0.4s;
 }
 
+/* home */
+#news {
+  font-family: "Poppins", sans-serif;
+}
+
+#news .container .row .display-news {
+  margin-bottom: 50px;
+}
+
 /* footer */
 footer {
   height: 11vh;
+}
+
+footer .container .content-reseaux {
+  padding-left: 0;
 }
 
 footer .container .content-reseaux li a i {
@@ -544,6 +680,12 @@ footer .container .content-reseaux li a i {
 
 footer .container .content-reseaux li a i:hover {
   color: #fff;
+}
+
+@media (max-width: 991px) {
+  footer .container .content-reseaux li a i {
+    font-size: 30px;
+  }
 }
 
 footer .container .content-copyright {
@@ -563,5 +705,12 @@ footer .container .content-copyright li a {
 
 footer .container .content-copyright li a:hover {
   color: #fff;
+}
+
+@media (max-width: 991px) {
+  footer {
+    height: auto;
+    margin-top: 40px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

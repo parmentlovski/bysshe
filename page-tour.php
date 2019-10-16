@@ -26,9 +26,9 @@
 
                     $dateTour = date_i18n(get_option('date_format'), strtotime($date));
 
-                    $test = substr($date, 0, 4);
+                    $year = substr($date, 0, 4);
 
-                    if ($test == '2019') :
+                    if ($year == '2019') :
                         ?>
 
                         <div class="col-6">
@@ -77,9 +77,9 @@
 
                     $dateTour = date_i18n(get_option('date_format'), strtotime($date));
 
-                    $test = substr($date, 0, 4);
+                    $year= substr($date, 0, 4);
 
-                    if ($test == '2018') :
+                    if ($year== '2018') :
                         ?>
 
                         <div class="col-6">
@@ -128,9 +128,9 @@
 
                     $dateTour = date_i18n(get_option('date_format'), strtotime($date));
 
-                    $test = substr($date, 0, 4);
+                    $year= substr($date, 0, 4);
 
-                    if ($test == '2017') :
+                    if ($year== '2017') :
                         ?>
 
                         <div class="col-6">
@@ -179,9 +179,9 @@
 
                     $dateTour = date_i18n(get_option('date_format'), strtotime($date));
 
-                    $test = substr($date, 0, 4);
+                    $year= substr($date, 0, 4);
 
-                    if ($test == '2016') :
+                    if ($year== '2016') :
                         ?>
 
                         <div class="col-6">
@@ -230,9 +230,9 @@
 
                     $dateTour = date_i18n(get_option('date_format'), strtotime($date));
 
-                    $test = substr($date, 0, 4);
+                    $year= substr($date, 0, 4);
 
-                    if ($test == '2015') :
+                    if ($year== '2015') :
                         ?>
 
                         <div class="col-6">
