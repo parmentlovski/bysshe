@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Page accueil
+*/
+?>
+
 <?php do_action( 'display_header', 'bysshe_header' ); ?>
 
 <main id="accueil" class="display-menu">

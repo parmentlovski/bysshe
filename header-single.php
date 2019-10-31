@@ -21,7 +21,7 @@
         <div class="row justify-content-start align-items-center justify-content-md-center">
             <div id="content-logo">
                 <a href="/demo">
-                <img src="wp-content/themes/bysshe/assets/img/bysshewhite.png" alt="logo du groupe Bysshe Band" height="1031" width="1181">
+                <img src="../wp-content/themes/bysshe/assets/img/bysshewhite.png" alt="logo du groupe Bysshe Band" height="1031" width="1181">
                 </a>
             </div>
             <div class="burger">

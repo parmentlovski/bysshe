@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="groupe du Haut Doubs">
+    <meta name="description" content="Bienvenue sur le site officiel du groupe de musique Bysshe">
     <meta name="author" content="Parmentelot Bryan">
     <title>Bysshe Band - Official Website</title>
 

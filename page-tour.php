@@ -1,262 +1,287 @@
-<?php get_header(); ?>
+<?php do_action('display_header', 'bysshe_header'); ?>
+
 <main id="tour" class="display-menu">
+
     <section class="container">
 
-        <h2 class="text-center"> 2019 </h2>
+    <?php 
+        $pagename = get_query_var('pagename');
 
-        <div class="row">
+        $args = array(
+            'pagename' => $pagename
+        );
+        $post_query = new WP_Query($args);
 
-            <?php
-            $post = array(
-                'post_type' => 'tour',
-                'posts_per_page' => -1,
-                'order' => 'DESC', // classé par ordre alphabétique
-                'orderby' => 'meta_value',
-                'meta_key' => '_date_tour'
-            );
+        if ($post_query->have_posts()) :
+            while ($post_query->have_posts()) : $post_query->the_post();
 
-            $post_query = new WP_Query($post);
+                ?>
+                <h1 class="text-center text-md-left"><span><?php the_title(); ?></span></h1>
 
-            if ($post_query->have_posts()) :
-                while ($post_query->have_posts()) : $post_query->the_post();
 
-                    $tour = get_post_custom($post_id);
+                <div class="row">
 
-                    $date = $tour['_date_tour'][0];
+                    <?php the_content(); ?>
 
-                    $dateTour = date_i18n(get_option('date_format'), strtotime($date));
+                </div>
+        <?php
+            endwhile;
+        endif; ?>
+        
+    <h2 class="text-center"> 2019 </h2>
 
-                    $year = substr($date, 0, 4);
+<div class="row">
 
-                    if ($year == '2019') :
-                        ?>
+    <?php
+    $post = array(
+        'post_type' => 'tour',
+        'posts_per_page' => -1,
+        'order' => 'DESC', // classé par ordre alphabétique
+        'orderby' => 'meta_value',
+        'meta_key' => '_date_tour'
+    );
 
-                        <div class="col-6">
-                            <ul class="list-tour d-flex">
-                                <li id="date"><?php
-                                                            echo $dateTour; ?> </li>
-                                <li id="localisation"><?php
-                                                                    $place = $tour['_place_tour'][0];
-                                                                    $city = $tour['_city_tour'][0];
-                                                                    $country = $tour['_country_tour'][0];
-                                                                    echo $place . ' - <span id="city-and-country">';
-                                                                    echo $city . ' , ';
-                                                                    echo $country . '</span>'; ?>
-                                </li>
-                                <li><a id="informations" href="<?php echo $tour['_informations_tour'][0]; ?>" target="_blank"><span>+ INFOS</span></a></li>
-                            </ul>
-                        </div>
+    $post_query = new WP_Query($post);
 
-            <?php
-                    endif;
-                endwhile;
-            endif; ?>
-        </div>
+    if ($post_query->have_posts()) :
+        while ($post_query->have_posts()) : $post_query->the_post();
 
-        <h2 class="text-center"> 2018 </h2>
+            $tour = get_post_custom($post_id);
 
-        <div class="row">
+            $date = $tour['_date_tour'][0];
 
-            <?php
-            $post = array(
-                'post_type' => 'tour',
-                'posts_per_page' => -1,
-                'order' => 'DESC', // classé par ordre alphabétique
-                'orderby' => 'meta_value',
-                'meta_key' => '_date_tour'
-            );
+            $dateTour = date_i18n(get_option('date_format'), strtotime($date));
 
-            $post_query = new WP_Query($post);
+            $year = substr($date, 0, 4);
 
-            if ($post_query->have_posts()) :
-                while ($post_query->have_posts()) : $post_query->the_post();
+            if ($year == '2019') :
+                ?>
 
-                    $tour = get_post_custom($post_id);
+                <div class="col-12 col-lg-6 effect-tour">
+                    <ul class="list-tour d-flex flex-column flex-md-row">
+                        <li id="date"><?php
+                                                    echo $dateTour; ?> </li>
+                        <li id="localisation" class="d-flex flex-column flex-md-row"><?php
+                                                            $place = $tour['_place_tour'][0];
+                                                            $city = $tour['_city_tour'][0];
+                                                            $country = $tour['_country_tour'][0];
+                                                            echo $place . ' <span class="separate">-</span> <span id="city-and-country">';
+                                                            echo $city . ' , ';
+                                                            echo $country . '</span>'; ?>
+                        </li>
+                        <li><a id="informations" href="<?php echo $tour['_informations_tour'][0]; ?>" target="_blank"><span>+ INFOS</span></a></li>
+                    </ul>
+                </div>
 
-                    $date = $tour['_date_tour'][0];
+    <?php
+            endif;
+        endwhile;
+    endif; ?>
+</div>
 
-                    $dateTour = date_i18n(get_option('date_format'), strtotime($date));
+<h2 class="text-center"> 2018 </h2>
 
-                    $year= substr($date, 0, 4);
+<div class="row">
 
-                    if ($year== '2018') :
-                        ?>
+    <?php
+    $post = array(
+        'post_type' => 'tour',
+        'posts_per_page' => -1,
+        'order' => 'DESC', // classé par ordre alphabétique
+        'orderby' => 'meta_value',
+        'meta_key' => '_date_tour'
+    );
 
-                        <div class="col-6">
-                            <ul class="list-tour d-flex">
-                                <li id="date"><?php
-                                                            echo $dateTour; ?> </li>
-                                <li id="localisation"><?php
-                                                                    $place = $tour['_place_tour'][0];
-                                                                    $city = $tour['_city_tour'][0];
-                                                                    $country = $tour['_country_tour'][0];
-                                                                    echo $place . ' - <span id="city-and-country">';
-                                                                    echo $city . ' , ';
-                                                                    echo $country . '</span>'; ?>
-                                </li>
-                                <li><a id="informations" href="<?php echo $tour['_informations_tour'][0]; ?>" target="_blank"><span>+ INFOS</span></a></li>
-                            </ul>
-                        </div>
+    $post_query = new WP_Query($post);
 
-            <?php
-                    endif;
-                endwhile;
-            endif; ?>
-        </div>
+    if ($post_query->have_posts()) :
+        while ($post_query->have_posts()) : $post_query->the_post();
 
-        <h2 class="text-center"> 2017 </h2>
+            $tour = get_post_custom($post_id);
 
-        <div class="row">
+            $date = $tour['_date_tour'][0];
 
-            <?php
-            $post = array(
-                'post_type' => 'tour',
-                'posts_per_page' => -1,
-                'order' => 'DESC', // classé par ordre alphabétique
-                'orderby' => 'meta_value',
-                'meta_key' => '_date_tour'
-            );
+            $dateTour = date_i18n(get_option('date_format'), strtotime($date));
 
-            $post_query = new WP_Query($post);
+            $year= substr($date, 0, 4);
 
-            if ($post_query->have_posts()) :
-                while ($post_query->have_posts()) : $post_query->the_post();
+            if ($year== '2018') :
+                ?>
 
-                    $tour = get_post_custom($post_id);
+                <div class="col-12 col-lg-6 effect-tour">
+                    <ul class="list-tour d-flex flex-column flex-md-row">
+                        <li id="date"><?php
+                                                    echo $dateTour; ?> </li>
+                        <li id="localisation" class="d-flex flex-column flex-md-row"><?php
+                                                            $place = $tour['_place_tour'][0];
+                                                            $city = $tour['_city_tour'][0];
+                                                            $country = $tour['_country_tour'][0];
+                                                            echo $place . ' <span class="separate">-</span> <span id="city-and-country">';
+                                                            echo $city . ' , ';
+                                                            echo $country . '</span>'; ?>
+                        </li>
+                        <li><a id="informations" href="<?php echo $tour['_informations_tour'][0]; ?>" target="_blank"><span>+ INFOS</span></a></li>
+                    </ul>
+                </div>
 
-                    $date = $tour['_date_tour'][0];
+    <?php
+            endif;
+        endwhile;
+    endif; ?>
+</div>
 
-                    $dateTour = date_i18n(get_option('date_format'), strtotime($date));
+<h2 class="text-center"> 2017 </h2>
 
-                    $year= substr($date, 0, 4);
+<div class="row">
 
-                    if ($year== '2017') :
-                        ?>
+    <?php
+    $post = array(
+        'post_type' => 'tour',
+        'posts_per_page' => -1,
+        'order' => 'DESC', // classé par ordre alphabétique
+        'orderby' => 'meta_value',
+        'meta_key' => '_date_tour'
+    );
 
-                        <div class="col-6">
-                            <ul class="list-tour d-flex">
-                                <li id="date"><?php
-                                                            echo $dateTour; ?> </li>
-                                <li id="localisation"><?php
-                                                                    $place = $tour['_place_tour'][0];
-                                                                    $city = $tour['_city_tour'][0];
-                                                                    $country = $tour['_country_tour'][0];
-                                                                    echo $place . ' - <span id="city-and-country">';
-                                                                    echo $city . ' , ';
-                                                                    echo $country . '</span>'; ?>
-                                </li>
-                                <li><a id="informations" href="<?php echo $tour['_informations_tour'][0]; ?>" target="_blank"><span>+ INFOS</span></a></li>
-                            </ul>
-                        </div>
+    $post_query = new WP_Query($post);
 
-            <?php
-                    endif;
-                endwhile;
-            endif; ?>
-        </div>
+    if ($post_query->have_posts()) :
+        while ($post_query->have_posts()) : $post_query->the_post();
 
-        <h2 class="text-center"> 2016 </h2>
+            $tour = get_post_custom($post_id);
 
-        <div class="row">
+            $date = $tour['_date_tour'][0];
 
-            <?php
-            $post = array(
-                'post_type' => 'tour',
-                'posts_per_page' => -1,
-                'order' => 'DESC', // classé par ordre alphabétique
-                'orderby' => 'meta_value',
-                'meta_key' => '_date_tour'
-            );
+            $dateTour = date_i18n(get_option('date_format'), strtotime($date));
 
-            $post_query = new WP_Query($post);
+            $year= substr($date, 0, 4);
 
-            if ($post_query->have_posts()) :
-                while ($post_query->have_posts()) : $post_query->the_post();
+            if ($year== '2017') :
+                ?>
 
-                    $tour = get_post_custom($post_id);
+                <div class="col-12 col-lg-6 effect-tour">
+                    <ul class="list-tour d-flex flex-column flex-md-row">
+                        <li id="date"><?php
+                                                    echo $dateTour; ?> </li>
+                        <li id="localisation" class="d-flex flex-column flex-md-row"><?php
+                                                            $place = $tour['_place_tour'][0];
+                                                            $city = $tour['_city_tour'][0];
+                                                            $country = $tour['_country_tour'][0];
+                                                            echo $place . ' <span class="separate">-</span> <span id="city-and-country">';
+                                                            echo $city . ' , ';
+                                                            echo $country . '</span>'; ?>
+                        </li>
+                        <li><a id="informations" href="<?php echo $tour['_informations_tour'][0]; ?>" target="_blank"><span>+ INFOS</span></a></li>
+                    </ul>
+                </div>
 
-                    $date = $tour['_date_tour'][0];
+    <?php
+            endif;
+        endwhile;
+    endif; ?>
+</div>
 
-                    $dateTour = date_i18n(get_option('date_format'), strtotime($date));
+<h2 class="text-center"> 2016 </h2>
 
-                    $year= substr($date, 0, 4);
+<div class="row">
 
-                    if ($year== '2016') :
-                        ?>
+    <?php
+    $post = array(
+        'post_type' => 'tour',
+        'posts_per_page' => -1,
+        'order' => 'DESC', // classé par ordre alphabétique
+        'orderby' => 'meta_value',
+        'meta_key' => '_date_tour'
+    );
 
-                        <div class="col-6">
-                            <ul class="list-tour d-flex">
-                                <li id="date"><?php
-                                                            echo $dateTour; ?> </li>
-                                <li id="localisation"><?php
-                                                                    $place = $tour['_place_tour'][0];
-                                                                    $city = $tour['_city_tour'][0];
-                                                                    $country = $tour['_country_tour'][0];
-                                                                    echo $place . ' - <span id="city-and-country">';
-                                                                    echo $city . ' , ';
-                                                                    echo $country . '</span>'; ?>
-                                </li>
-                                <li><a id="informations" href="<?php echo $tour['_informations_tour'][0]; ?>" target="_blank"><span>+ INFOS</span></a></li>
-                            </ul>
-                        </div>
+    $post_query = new WP_Query($post);
 
-            <?php
-                    endif;
-                endwhile;
-            endif; ?>
-        </div>
+    if ($post_query->have_posts()) :
+        while ($post_query->have_posts()) : $post_query->the_post();
 
-        <h2 class="text-center"> 2015 </h2>
+            $tour = get_post_custom($post_id);
 
-        <div class="row">
+            $date = $tour['_date_tour'][0];
 
-            <?php
-            $post = array(
-                'post_type' => 'tour',
-                'posts_per_page' => -1,
-                'order' => 'DESC', // classé par ordre alphabétique
-                'orderby' => 'meta_value',
-                'meta_key' => '_date_tour'
-            );
+            $dateTour = date_i18n(get_option('date_format'), strtotime($date));
 
-            $post_query = new WP_Query($post);
+            $year= substr($date, 0, 4);
 
-            if ($post_query->have_posts()) :
-                while ($post_query->have_posts()) : $post_query->the_post();
+            if ($year== '2016') :
+                ?>
 
-                    $tour = get_post_custom($post_id);
+                <div class="col-12 col-lg-6 effect-tour">
+                    <ul class="list-tour d-flex flex-column flex-md-row">
+                        <li id="date"><?php
+                                                    echo $dateTour; ?> </li>
+                        <li id="localisation" class="d-flex flex-column flex-md-row"><?php
+                                                            $place = $tour['_place_tour'][0];
+                                                            $city = $tour['_city_tour'][0];
+                                                            $country = $tour['_country_tour'][0];
+                                                            echo $place . ' <span class="separate">-</span> <span id="city-and-country">';
+                                                            echo $city . ' , ';
+                                                            echo $country . '</span>'; ?>
+                        </li>
+                        <li><a id="informations" href="<?php echo $tour['_informations_tour'][0]; ?>" target="_blank"><span>+ INFOS</span></a></li>
+                    </ul>
+                </div>
 
-                    $date = $tour['_date_tour'][0];
+    <?php
+            endif;
+        endwhile;
+    endif; ?>
+</div>
 
-                    $dateTour = date_i18n(get_option('date_format'), strtotime($date));
+<h2 class="text-center"> 2015 </h2>
 
-                    $year= substr($date, 0, 4);
+<div class="row">
 
-                    if ($year== '2015') :
-                        ?>
+    <?php
+    $post = array(
+        'post_type' => 'tour',
+        'posts_per_page' => -1,
+        'order' => 'DESC', // classé par ordre alphabétique
+        'orderby' => 'meta_value',
+        'meta_key' => '_date_tour'
+    );
 
-                        <div class="col-6">
-                            <ul class="list-tour d-flex">
-                                <li id="date"><?php
-                                                            echo $dateTour; ?> </li>
-                                <li id="localisation"><?php
-                                                                    $place = $tour['_place_tour'][0];
-                                                                    $city = $tour['_city_tour'][0];
-                                                                    $country = $tour['_country_tour'][0];
-                                                                    echo $place . ' - <span id="city-and-country">';
-                                                                    echo $city . ' , ';
-                                                                    echo $country . '</span>'; ?>
-                                </li>
-                                <li><a id="informations" href="<?php echo $tour['_informations_tour'][0]; ?>" target="_blank"><span>+ INFOS</span></a></li>
-                            </ul>
-                        </div>
+    $post_query = new WP_Query($post);
 
-            <?php
-                    endif;
-                endwhile;
-            endif; ?>
-        </div>
+    if ($post_query->have_posts()) :
+        while ($post_query->have_posts()) : $post_query->the_post();
 
+            $tour = get_post_custom($post_id);
+
+            $date = $tour['_date_tour'][0];
+
+            $dateTour = date_i18n(get_option('date_format'), strtotime($date));
+
+            $year= substr($date, 0, 4);
+
+            if ($year== '2015') :
+                ?>
+
+                <div class="col-12 col-lg-6 effect-tour">
+                    <ul class="list-tour d-flex flex-column flex-md-row">
+                        <li id="date"><?php
+                                                    echo $dateTour; ?> </li>
+                        <li id="localisation" class="d-flex flex-column flex-md-row"><?php
+                                                            $place = $tour['_place_tour'][0];
+                                                            $city = $tour['_city_tour'][0];
+                                                            $country = $tour['_country_tour'][0];
+                                                            echo $place . ' <span class="separate">-</span> <span id="city-and-country">';
+                                                            echo $city . ' , ';
+                                                            echo $country . '</span>'; ?>
+                        </li>
+                        <li><a id="informations" href="<?php echo $tour['_informations_tour'][0]; ?>" target="_blank"><span>+ INFOS</span></a></li>
+                    </ul>
+                </div>
+
+    <?php
+            endif;
+        endwhile;
+    endif; ?>
+</div>
     </section>
 </main>
-<?php get_footer(); ?>
+<?php do_action('display_footer', 'bysshe_footer'); ?>

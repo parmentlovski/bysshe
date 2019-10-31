@@ -1,4 +1,5 @@
-<?php get_header('frontpage'); ?>
+<?php do_action( 'display_header', 'bysshe_header' ); ?>
+
 <main id="cover_page" class="container-fluid">
     <section id="cover_album" class="container">
         <div class="row d-flex flex-column justify-content-between">
@@ -14,4 +15,4 @@
         </div>
     </section>
 </main>
-<?php get_footer('frontpage'); ?>
+<?php do_action( 'display_footer', 'bysshe_footer' ); ?>

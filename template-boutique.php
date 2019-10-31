@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Page boutique
+*/
+?>
+
 <?php do_action( 'display_header', 'bysshe_header' ); ?>
 
 <main id="boutique" class="display-menu">
