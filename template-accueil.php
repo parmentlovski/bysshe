@@ -66,6 +66,8 @@ Template Name: Page accueil
                                         'post_type' => 'tour',
                                         'posts_per_page' => 5,
                                         'order' => 'DESC', // classé par ordre alphabétique
+                                        'orderby' => 'meta_value',
+                                        'meta_key' => '_date_tour'
                                     );
 
                                     $post_query = new WP_Query($post);

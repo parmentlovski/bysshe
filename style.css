@@ -1171,6 +1171,11 @@ h1 span {
   }
 }
 
+/* cgv */
+#cgv {
+  font-family: "Poppins", sans-serif;
+}
+
 /* footer */
 footer {
   height: 17vh;

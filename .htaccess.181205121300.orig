@@ -1,0 +1,35 @@
+# This file was updated by Duplicator on 2018-11-25 10:36:10. See .htaccess.orig for the original .htaccess file.
+# Please note that other plugins and resources write to this file. If the time-stamp above is different
+# than the current time-stamp on the file system then another resource has updated this file.
+# Duplicator only writes to this file once during the install process while running the installer.php file.
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# Redirection vers HTTPS
+RewriteCond %{SERVER_PORT} ^80$ [OR]
+RewriteCond %{HTTPS} =off
+RewriteRule ^(.*)$ https://bysshe-band.com/$1 [R=301,L]
+
+# Redirection du www vers non-www en HTTPS
+RewriteCond %{HTTP_HOST} ^www\.monsite\.com [NC]
+RewriteRule ^(.*)$ https://bysshe-band.com/$1 [R=301,L]
+
+# END WordPress
+
+# BEGIN Securite
+<ifmodule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_COOKIE} !^.*cookie\-admin\-blog=494198580.*$ [NC]
+RewriteRule wp-login.php - [F]
+</ifmodule>
+
+# END Securite

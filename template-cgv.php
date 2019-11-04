@@ -4,7 +4,7 @@ Template Name: Page cgv
 */
 ?>
 <?php do_action( 'display_header', 'bysshe_header' ); ?>
-<main id="music" class="display-menu">
+<main id="cgv" class="display-menu">
 <?php $pagename = get_query_var('pagename');
 
 $args = array(

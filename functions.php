@@ -114,6 +114,92 @@ function wpm_custom_post_type_news() {
 add_action( 'init', 'wpm_custom_post_type_news', 0 );
 
 
+############### VIDEO ################
+
+function wpm_custom_post_type_video() {
+
+	// On rentre les différentes dénominations de notre custom post type qui seront affichées dans l'administration
+	$labels = array(
+		// Le nom au pluriel
+		'name'                => _x( 'Video', 'Post Type General Name'),
+		// Le nom au singulier
+		'singular_name'       => _x( 'Video', 'Post Type Singular Name'),
+		// Le libellé affiché dans le menu
+		'menu_name'           => __( 'Video'),
+		// Les différents libellés de l'administration
+		'all_items'           => __( 'Toutes les vidéos du groupe Bysshe'),
+		'view_item'           => __( 'Voir les vidés du groupe Bysshe'),
+		'add_new_item'        => __( 'Ajouter une nouvelle vidéo'),
+		'add_new'             => __( 'Ajouter'),
+		'edit_item'           => __( 'Editer les vidéos'),
+		'update_item'         => __( 'Modifier les vidéos'),
+		'search_items'        => __( 'Rechercher une vidéo'),
+		'not_found'           => __( 'Non trouvée'),
+		'not_found_in_trash'  => __( 'Non trouvée dans la corbeille'),
+	);
+	
+	// On peut définir ici d'autres options pour notre custom post type
+	
+	$args = array(
+		'label'               => __( 'Video'),
+		'description'         => __( 'Tous sur les prochaines vidéos'),
+		'labels'              => $labels,
+		// On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+		/* 
+		* Différentes options supplémentaires
+		*/
+		'show_in_rest' => true,
+		'hierarchical'        => false,
+		'public'              => true,
+		'has_archive'         => true,
+		'rewrite'			  => array( 'slug' => 'cpt-video'),
+
+	);
+	
+	// On enregistre notre custom post type qu'on nomme ici "serietv" et ses arguments
+	register_post_type( 'video', $args );
+}
+
+add_action( 'init', 'wpm_custom_post_type_video', 0 );
+
+ ######## METABOX VIDEO #######
+
+ add_action('add_meta_boxes', 'initialisation_metaboxes_video');
+ function initialisation_metaboxes_video()
+ {
+	 //on utilise la fonction add_metabox() pour initialiser une metabox
+	 add_meta_box('id_ma_meta', 'Informations vidéos', 'meta_function_video', 'video', 'normal', 'high');
+ }
+ 
+ 
+ function meta_function_video($post)
+ {
+	 // on récupère la valeur actuelle pour la mettre dans le champ
+	 $video = get_post_meta($post->ID, '_video', true);
+
+	 echo '<label for="video"> Url de la vidéo : </label>';
+	 echo '<input id="video" type="text" name="video" value="' . $video . '"/></br>';    
+	 echo '<p><strong>Informations importantes</strong></p>';
+	 echo '<p>L\'url de la vidéo doit être structurée de la façon suivante : url youtube + embed + code de la vidéo</p>';
+	 echo '<p>Exemple : https://www.youtube.com/embed/CqhjHw6DhOE</p>';
+	   
+ }
+
+ add_action('save_post_video', 'save_metaboxes_video');
+
+ function save_metaboxes_video($post_ID)
+ {
+	 if (isset($_POST['video'])) {
+		 update_post_meta(
+			 $post_ID,
+			 '_video',
+			 sanitize_text_field($_POST['video'])
+		 );
+	 }	 
+ }
+
+
 ############### TOURS ################
 
 function wpm_custom_post_type_tour() {
@@ -245,90 +331,6 @@ add_action( 'init', 'wpm_custom_post_type_tour', 0 );
 			$meta_element_class
 		);
 	}	 
- }
-
-############### VIDEO ################
-
-function wpm_custom_post_type_video() {
-
-	// On rentre les différentes dénominations de notre custom post type qui seront affichées dans l'administration
-	$labels = array(
-		// Le nom au pluriel
-		'name'                => _x( 'Video', 'Post Type General Name'),
-		// Le nom au singulier
-		'singular_name'       => _x( 'Video', 'Post Type Singular Name'),
-		// Le libellé affiché dans le menu
-		'menu_name'           => __( 'Video'),
-		// Les différents libellés de l'administration
-		'all_items'           => __( 'Toutes les vidéos du groupe Bysshe'),
-		'view_item'           => __( 'Voir les vidés du groupe Bysshe'),
-		'add_new_item'        => __( 'Ajouter une nouvelle vidéo'),
-		'add_new'             => __( 'Ajouter'),
-		'edit_item'           => __( 'Editer les vidéos'),
-		'update_item'         => __( 'Modifier les vidéos'),
-		'search_items'        => __( 'Rechercher une vidéo'),
-		'not_found'           => __( 'Non trouvée'),
-		'not_found_in_trash'  => __( 'Non trouvée dans la corbeille'),
-	);
-	
-	// On peut définir ici d'autres options pour notre custom post type
-	
-	$args = array(
-		'label'               => __( 'Video'),
-		'description'         => __( 'Tous sur les prochaines vidéos'),
-		'labels'              => $labels,
-		// On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
-		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-		/* 
-		* Différentes options supplémentaires
-		*/
-		'show_in_rest' => true,
-		'hierarchical'        => false,
-		'public'              => true,
-		'has_archive'         => true,
-		'rewrite'			  => array( 'slug' => 'cpt-video'),
-
-	);
-	
-	// On enregistre notre custom post type qu'on nomme ici "serietv" et ses arguments
-	register_post_type( 'video', $args );
-}
-
-add_action( 'init', 'wpm_custom_post_type_video', 0 );
-
- ######## METABOX VIDEO #######
-
- add_action('add_meta_boxes', 'initialisation_metaboxes_video');
- function initialisation_metaboxes_video()
- {
-	 //on utilise la fonction add_metabox() pour initialiser une metabox
-	 add_meta_box('id_ma_meta', 'Informations vidéos', 'meta_function_video', 'video', '2015', 'high');
- }
- 
- function meta_function_video($post)
- {
-	 // on récupère la valeur actuelle pour la mettre dans le champ
-	 $video = get_post_meta($post->ID, '_video', true);
-
-	 echo '<label for="video"> Url de la vidéo : </label>';
-	 echo '<input id="video" type="text" name="video" value="' . $video . '"/></br>';    
-	 echo '<p><strong>Informations importantes</strong></p>';
-	 echo '<p>L\'url de la vidéo doit être structurée de la façon suivante : url youtube + embed + code de la vidéo</p>';
-	 echo '<p>Exemple : https://www.youtube.com/embed/CqhjHw6DhOE</p>';
-	   
- }
-
- add_action('save_post_video', 'save_metaboxes_video');
-
- function save_metaboxes_video($post_ID)
- {
-	 if (isset($_POST['video'])) {
-		 update_post_meta(
-			 $post_ID,
-			 '_video',
-			 sanitize_text_field($_POST['video'])
-		 );
-	 }	 
  }
 
  ######## WOO COMMERCE #######
