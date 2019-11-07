@@ -29,7 +29,7 @@ Template Name: Page validation
             endwhile;
         endif; ?>
 
-        <div class="row">
+        <div class="row content-validation">
             <div><?php the_content(); ?></div>
         </div>
 

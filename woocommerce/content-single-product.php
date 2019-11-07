@@ -22,12 +22,12 @@ global $product;
 
 
 ?>
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?>>
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?> class="content-product">
 
 
 	<div class="summary entry-summary d-flex-column d-md-flex justify-content-between">
 
-		<div class="w-50 d-flex justify-content-center">
+		<div class="w-100 w-md-50 d-flex justify-content-center">
 			<?php
 			/**
 			 * Hook: woocommerce_before_single_product_summary.
@@ -39,14 +39,14 @@ global $product;
 			?>
 		</div>
 		
-		<div class="w-50 d-flex flex-column justify-content-around align-items-center">
+		<div class="w-100 w-md-50 d-flex flex-column justify-content-center align-items-center">
 			<?php
 			/**
 			 * Hook: woocommerce_single_product_summary.
 			 *
 			 * @hooked woocommerce_template_single_title - 5
 			 * @hooked woocommerce_template_single_rating - 10
-			 * @hooked woocommerce_template_single_price - 10
+			 * @hooked woocommerce_template_single_price - 10 
 			 * @hooked woocommerce_template_single_excerpt - 20
 			 * @hooked woocommerce_template_single_add_to_cart - 30
 			 * @hooked woocommerce_template_single_meta - 40

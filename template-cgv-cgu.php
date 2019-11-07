@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Page cgv
+Template Name: Page cgv/cgu
 */
 ?>
 <?php do_action( 'display_header', 'bysshe_header' ); ?>

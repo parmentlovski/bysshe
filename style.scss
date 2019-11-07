@@ -75,13 +75,33 @@ h1 {
     }
 }
 
-#menu-shop {
-    margin-bottom: 40px;
-}
-
 
 //woo commerce 
-.related {
+
+.content-product {
+    font-family: $poppins;
+}
+
+.size-woocommerce_thumbnail { // image de la loop contenu dans single-product.php
+
+    @media (min-width: 1100px) and (max-width: 1199px) {
+        height: 250px;
+        width: 250px;
+    }
+
+    @media (max-width: 767px) {
+        margin-top: 25px;
+    }
+}
+
+p {
+    .woocommerce-Price-amount::before { // afficher le prix sur les produits
+        content: 'Prix :';
+        padding-right: 5px;
+    }
+}
+
+.related { // les produits apparentés de la page single-produit
     margin-top: 100px;
 
     &>h2 {
@@ -97,7 +117,8 @@ h1 {
         }
     }
 
-    .products {
+    .products { 
+        font-family: $poppins;
         display: flex;
         justify-content: space-between;
 
@@ -114,7 +135,21 @@ h1 {
             }
         }
     }
+
+    .product {
+        display: flex;
+        flex-direction: column;
+    }
 }
+
+#order_comments_field { // bien placer notes supplémentaire pour la validation de commande
+    display: flex;
+    flex-direction: column;
+}
+
+/* #customer_details { // changer background page validation détails commande
+    background: $bluegrey;
+}*/
 
 .return-to-shop,
 .wc-backward {
@@ -137,6 +172,7 @@ h1 {
 
 .wc-forward {
     color: $bluegrey;
+    font-family: $poppins;
 }
 
 .wp-post-image {
@@ -151,11 +187,13 @@ h1 {
 
 .product_title {
     margin-bottom: 40px;
+    font-family: $poppins;
 }
 
 .quantity {
     width: 40%;
     margin-bottom: 10px;
+    font-family: $poppins;
 }
 
 .checkout {
@@ -304,7 +342,7 @@ h1 {
                     }
 
                     @media (min-width: 1100px) and (max-width: 1199px) {
-                        // régler le padding de entrer et boutique 
+                        // régler le margin de entrer et boutique 
                         margin-bottom: 10px;
                     }
 
@@ -815,7 +853,7 @@ h1 {
                     }
 
                     .news {
-                        font-family: $glasgow;
+                        font-family: $poppins;
 
                         div {
                             padding-right: 0;
@@ -1235,11 +1273,17 @@ h1 {
 /* boutique */
 #boutique {
 
-    font-family: $poppins;
-
     .container {
-        .row {
+
+        #menu-shop {
+            font-family: $poppins;
             margin-bottom: 40px;
+        }
+
+        .row {
+            font-family: $poppins;
+            margin-bottom: 40px;
+            padding: 0;
 
             li {
                 margin-top: 40px;
@@ -1324,6 +1368,32 @@ h1 {
     }
 }
 
+/* validation */ 
+
+#validation {
+    #menu-shop {
+        font-family: $poppins;
+        margin-bottom: 40px;
+    }
+    
+    .content-validation {
+        font-family: $poppins;
+    }
+}
+
+/* panier */ 
+
+#panier {
+    #menu-shop {
+        font-family: $poppins;
+        margin-bottom: 40px;
+    }
+    
+    .content-panier {
+        font-family: $poppins;
+    }
+}
+
 /* music */
 #music {
     .row {
@@ -1346,26 +1416,49 @@ h1 {
             }
         }
 
-        #download {
-            ul {
-                @media (max-width: 768px) {
-                    padding-left: 35%;
-                }
-            }
-        }
 
         ul {
+            padding: 0;
             li {
-                margin-bottom: 5px;
+                margin-bottom: 25px;
+                font-family: $poppins;
+                
+                .img-fan-link {
+                    height: 30px;
+                    width: 90px;
+                    border: none;
+
+                    @media (max-width: 767px) {
+                        padding-bottom: 6px;
+                    }
+                }
 
                 a {
-                    &:hover {
-                        color: $bluegrey;
+
+                    .fas {
+                        color: $white;
+                        font-size: 12px;
+
+                        span {
+                            padding-left: 15%;
+                            font-size: 17px;
+                        }
+
+                        &:hover {
+                            color: $bluegrey;
+                        }
+
                     }
+
+                   
+                }
+
+                @media (max-width: 767px) {
+                    margin-bottom: 30px;
                 }
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: 767px) {
                 margin-top: 20px;
             }
         }
@@ -1374,7 +1467,6 @@ h1 {
 }
 
 /* cgv */
-
 #cgv {
     font-family: $poppins;
 }
@@ -1404,12 +1496,12 @@ h1 {
             }
 
             img {
-                @media (max-width: 768px) {
+                @media (max-width: 767px) {
                     height: 225px;
                 }
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: 767px) {
                 font-size: 18px;
             }
         }

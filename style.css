@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Add fonts */
 @font-face {
   font-family: 'StrongGlasgow';
@@ -42,8 +43,26 @@ h1 span {
   padding-bottom: 10px;
 }
 
-#menu-shop {
-  margin-bottom: 40px;
+.content-product {
+  font-family: "Poppins", sans-serif;
+}
+
+@media (min-width: 1100px) and (max-width: 1199px) {
+  .size-woocommerce_thumbnail {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+@media (max-width: 767px) {
+  .size-woocommerce_thumbnail {
+    margin-top: 25px;
+  }
+}
+
+p .woocommerce-Price-amount::before {
+  content: 'Prix :';
+  padding-right: 5px;
 }
 
 .related {
@@ -64,6 +83,7 @@ h1 span {
 }
 
 .related .products {
+  font-family: "Poppins", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,6 +111,29 @@ h1 span {
   }
 }
 
+.related .product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#order_comments_field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* #customer_details { // changer background page validation détails commande
+    background: $bluegrey;
+}*/
 .return-to-shop,
 .wc-backward {
   display: none;
@@ -108,6 +151,7 @@ h1 span {
 
 .wc-forward {
   color: #8B9F93;
+  font-family: "Poppins", sans-serif;
 }
 
 .wp-post-image {
@@ -124,11 +168,13 @@ h1 span {
 
 .product_title {
   margin-bottom: 40px;
+  font-family: "Poppins", sans-serif;
 }
 
 .quantity {
   width: 40%;
   margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
 }
 
 .checkout {
@@ -823,7 +869,7 @@ h1 span {
 }
 
 #accueil section #content-accueil #content-actualites .row .news {
-  font-family: "StrongGlasgow";
+  font-family: "Poppins", sans-serif;
 }
 
 #accueil section #content-accueil #content-actualites .row .news div {
@@ -1245,12 +1291,15 @@ h1 span {
 }
 
 /* boutique */
-#boutique {
+#boutique .container #menu-shop {
   font-family: "Poppins", sans-serif;
+  margin-bottom: 40px;
 }
 
 #boutique .container .row {
+  font-family: "Poppins", sans-serif;
   margin-bottom: 40px;
+  padding: 0;
 }
 
 #boutique .container .row li {
@@ -1331,6 +1380,26 @@ h1 span {
           transition-duration: 0.4s;
 }
 
+/* validation */
+#validation #menu-shop {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 40px;
+}
+
+#validation .content-validation {
+  font-family: "Poppins", sans-serif;
+}
+
+/* panier */
+#panier #menu-shop {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 40px;
+}
+
+#panier .content-panier {
+  font-family: "Poppins", sans-serif;
+}
+
 /* music */
 #music .row iframe {
   margin-bottom: 40px;
@@ -1358,21 +1427,48 @@ h1 span {
   }
 }
 
-@media (max-width: 768px) {
-  #music .row #download ul {
-    padding-left: 35%;
-  }
+#music .row ul {
+  padding: 0;
 }
 
 #music .row ul li {
-  margin-bottom: 5px;
+  margin-bottom: 25px;
+  font-family: "Poppins", sans-serif;
 }
 
-#music .row ul li a:hover {
+#music .row ul li .img-fan-link {
+  height: 30px;
+  width: 90px;
+  border: none;
+}
+
+@media (max-width: 767px) {
+  #music .row ul li .img-fan-link {
+    padding-bottom: 6px;
+  }
+}
+
+#music .row ul li a .fas {
+  color: #fff;
+  font-size: 12px;
+}
+
+#music .row ul li a .fas span {
+  padding-left: 15%;
+  font-size: 17px;
+}
+
+#music .row ul li a .fas:hover {
   color: #8B9F93;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+  #music .row ul li {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
   #music .row ul {
     margin-top: 20px;
   }
@@ -1406,13 +1502,13 @@ h1 span {
   margin-bottom: 50px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #page-error section .row img {
     height: 225px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #page-error section .row {
     font-size: 18px;
   }

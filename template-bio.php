@@ -63,9 +63,9 @@ Template Name: Page bio
                 <ul class="d-flex flex-column justify-content-center">
                     <li>Aymonier</li>
                     <li>Théo</li>
-                    <li>Basse et lyrics</li>
+                    <li>Basse et choeurs</li>
                 </ul>
-                <img class="img-fluid" src="wp-content/themes/bysshe/assets/img/theo.png" alt="Photo de Théo Aymonier"> <!-- width="640" height="960" -->
+                <img class="img-fluid" src="wp-content/themes/bysshe/assets/img/theo4.png" alt="Photo de Théo Aymonier"> <!-- width="640" height="960" -->
             </div>
         </div>
 

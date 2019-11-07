@@ -28,7 +28,7 @@ Template Name: Page panier
             endwhile;
         endif; ?>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center content-panier">
             <div><?php the_content(); ?></div>
         </div>
 

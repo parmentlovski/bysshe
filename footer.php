@@ -9,7 +9,8 @@
             <li class="copyright col-4 text-left text-md-center">Bysshe <span class="all-right">tous droits réservés</span><span class="copy">&copy</span>
             </li>
             <li class="copyright col-4 text-left text-md-center">
-                <a href="cgv">CGV</a>
+                <a href="cgv">CGV /</a>
+                <a href="cgu">CGU</a>
             </li>
             <li class="copyright col-4 text-left text-md-center">
                 <a href="https://bryan-parmentelot.fr" target="_blank"><span class="developped-by">Développé par </span>Parmentelot Bryan</a>
