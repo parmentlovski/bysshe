@@ -33,7 +33,7 @@
                                         ?>
                                         <div class="list-news col-12">
                                             <a href="<?php the_permalink(); ?>">
-                                                <p><?php the_title(); ?>: <?php the_excerpt(); ?></p>
+                                                <p><?php the_title(); ?></p>
                                             </a>
                                         </div>
                                 <?php

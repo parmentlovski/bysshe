@@ -41,7 +41,9 @@ Template Name: Page news
                     ?>
 
                     <div class="display-news col-12 col-md-4">
-                        <a href="<?php the_permalink($post->ID); ?>" class="d-flex justify-content-center align-items-center" style="background-size:100%; background-repeat: no-repeat; background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>');">
+                        <a href="<?php the_permalink($post->ID); ?>" class="d-flex justify-content-center align-items-center" 
+                        style="background-size:100%; background-repeat: no-repeat; background-image:url('
+                        <?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>');">
                             <p class="title-news"><?php the_title(); ?>
                             </p>
                         </a>

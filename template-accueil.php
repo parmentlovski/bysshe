@@ -20,7 +20,7 @@ Template Name: Page accueil
                             <h2 class="text-center">News</h2>
                         </a>
 
-                        <div style="background-image: url(wp-content/themes/bysshe/assets/img/news.jpg); background-size: 100% auto;">
+                        <div id="touch-news" style="background-image: url(wp-content/themes/bysshe/assets/img/news.jpg); background-size: 100% auto;">
                             <!-- <span class="img_hover"> -->
 
                             <div id="content-news">
@@ -60,7 +60,7 @@ Template Name: Page accueil
                         <a href="tour">
                             <h2 class="text-center">Tour</h2>
                         </a>
-                        <div style="background-image: url(wp-content/themes/bysshe/assets/img/tour.jpg); background-size: 140% auto; background-position: center;">
+                        <div id="touch-tour" style="background-image: url(wp-content/themes/bysshe/assets/img/tour.jpg); background-size: 140% auto; background-position: center;">
 
                         <div id="content-tour">
                             <a href="tour">

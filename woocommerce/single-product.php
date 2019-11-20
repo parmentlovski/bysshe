@@ -31,9 +31,9 @@ do_action( 'display_header', 'bysshe_header' ); ?>
                 ?>
 				<h1 class="text-center text-md-left"><span>Produits	</span></h1>
                 <ul id="menu-shop">
-                    <li><a href="../boutique">Boutique</a></li>
-                    <li><a href="../panier">Panier</a></li>
-                    <li><a href="../validation">Valider commande</li>
+					<li><a href="../compte"><i class="fas fa-user"><span>Compte</span></i></a></li>
+                    <li><a href="../boutique"><i class="fas fa-store"><span>Boutique</span></i></a></li>
+                    <li><a href="../panier"><i class="fas fa-shopping-basket"><span>Panier</span></i></a></li>
                 </ul>
         <?php
             endwhile;

@@ -11,7 +11,8 @@ function theme_enqueue_scripts()
     wp_enqueue_script('script-bootstrap-1', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), 1.0, true);
     wp_enqueue_script('script-bootstrap-2', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array(), 1.0, true);
     wp_enqueue_script('script-bootstrap-3', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), 1.0, true);
-	wp_enqueue_script('script', '/wp-content/themes/bysshe/script.js', array('jquery'), 1.0, true);	
+	wp_enqueue_script('script-menu', '/wp-content/themes/bysshe/assets/js/menu.js');	
+	wp_enqueue_script('script-touch', '/wp-content/themes/bysshe/assets/js/touch.js');	
     wp_enqueue_script('script_navbar', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), 1.0, true);
     wp_localize_script('script', 'ajaxurl', admin_url('admin-ajax.php'));
 }
@@ -347,7 +348,7 @@ add_action( 'after_setup_theme', 'customtheme_add_woocommerce_support' );
 function bysshe_header(){
 	if ( is_front_page() ) :
 		get_header( 'frontpage' );
-	elseif ( is_single()) :
+	elseif ( is_page_template() || is_single()) : // concerne les pages woocommerce et single
 		get_header('single');
 	else : 
 		get_header();

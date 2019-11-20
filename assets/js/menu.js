@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
             burger.classList.toggle("is-active");
               
              if(burger.classList.contains('is-active')) {
-              header.style.height = "180vh";
+              header.style.height = "135vh";
               menu.style.display = "block";
               // templateMenu.style.display = "none";
               displayMenu.style.display = "none";      
@@ -86,3 +86,6 @@ document.addEventListener("DOMContentLoaded", function() {
   x.addListener(myFunction) // Attach listener function on state changes 
 
 });
+
+
+

@@ -20,8 +20,8 @@ Template Name: Page boutique
                 ?>
                 <h1 class="text-center text-md-left"><span><?php the_title(); ?></span></h1>
                 <ul id="menu-shop">
-                    <li><a href="panier">Panier</a></li>
-                    <li><a href="validation">Valider commande</li>
+                    <li><a href="compte"><i class="fas fa-user"><span>Compte</span></i></a></li>
+                    <li><a href="panier"><i class="fas fa-shopping-basket"><span>Panier</span></i></a></li>
                 </ul>
         <?php
             endwhile;

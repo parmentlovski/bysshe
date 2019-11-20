@@ -29,7 +29,7 @@ Template Name: Page music
 
             </iframe>
 
-            <div class="content-music col-12 col-lg-4 d-flex flex-column justify-content-around">
+            <div class="content-music col-6 col-lg-4 d-flex flex-column justify-content-around">
                 <div id="streaming">
                     <ul>
                         <li class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-center">

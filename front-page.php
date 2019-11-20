@@ -1,7 +1,7 @@
 <?php do_action( 'display_header', 'bysshe_header' ); ?>
 
 <main id="cover_page" class="container-fluid">
-    <section id="cover_album" class="container">
+    <div id="cover_album" class="container">
         <div class="row d-flex flex-column justify-content-between">
             <div id="content-logo" class="d-flex justify-content-center">
                 <img src="wp-content/themes/bysshe/assets/img/byssheblack.png" alt="logo du groupe Bysshe Band" height="1031" width="1181">
@@ -13,6 +13,6 @@
                 <li><a class="effect-btn" href="boutique">BOUTIQUE</a></li>
             </ul>
         </div>
-    </section>
+    </div>
 </main>
 <?php do_action( 'display_footer', 'bysshe_footer' ); ?>

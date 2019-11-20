@@ -15,7 +15,7 @@
                 <h1 class="text-center text-md-left"><span><?php the_title(); ?></span></h1>
                 <ul id="menu-shop">
                     <li><a href="panier">Panier</a></li>
-                    <li><a href="validation">Valider commande</li>
+                    <li><a href="validation">Valider commande</a></li>
                 </ul>
         <?php
             endwhile;

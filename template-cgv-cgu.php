@@ -17,7 +17,7 @@ if ($post_query->have_posts()) :
 
         ?>
         <section class="container">
-            <h1 class="text-center text-md-left"><?php the_title(); ?></h1>
+            <h1 class="text-center text-md-left"><span><?php the_title(); ?></span></h1>
 
             <div class="row">
                 <div><?php the_content(); ?></div>

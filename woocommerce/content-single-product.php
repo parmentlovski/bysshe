@@ -25,21 +25,9 @@ global $product;
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?> class="content-product">
 
 
-	<div class="summary entry-summary d-flex-column d-md-flex justify-content-between">
+	<div class="summary entry-summary d-flex flex-column-reverse flex-md-row justify-content-between">
 
-		<div class="w-100 w-md-50 d-flex justify-content-center">
-			<?php
-			/**
-			 * Hook: woocommerce_before_single_product_summary.
-			 *
-			 * @hooked woocommerce_show_product_sale_flash - 10
-			 * @hooked woocommerce_show_product_images - 20
-			 */
-			do_action('woocommerce_before_single_product_summary');
-			?>
-		</div>
-		
-		<div class="w-100 w-md-50 d-flex flex-column justify-content-center align-items-center">
+		<div class="informations-product w-100 w-md-33 d-flex flex-column align-items-center align-items-md-start">
 			<?php
 			/**
 			 * Hook: woocommerce_single_product_summary.
@@ -55,7 +43,25 @@ global $product;
 			 */
 			do_action('woocommerce_single_product_summary');
 			?>
-			<?php the_content(); ?>
+		</div>
+
+		<div class="img-product w-100 w-md-33 d-flex justify-content-center">
+			<?php
+			/**
+			 * Hook: woocommerce_before_single_product_summary.
+			 *
+			 * @hooked woocommerce_show_product_sale_flash - 10
+			 * @hooked woocommerce_show_product_images - 20
+			 */
+			do_action('woocommerce_before_single_product_summary');
+			?>
+		</div>
+
+		<div class="w-100 w-md-33 d-flex flex-column align-items-center">
+			<h2 id="product-list">Fiche produit</h2>
+			<?php
+			the_content();
+			?>
 		</div>
 	</div>
 

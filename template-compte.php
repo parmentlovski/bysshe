@@ -1,12 +1,12 @@
 <?php
 /*
-Template Name: Page validation
+Template Name: Page compte
 */
 ?>
 
 <?php do_action('display_header', 'bysshe_header'); ?>
 
-<main id="validation" class="display-menu">
+<main id="compte" class="display-menu">
     <section class="container">
 
         <?php $pagename = get_query_var('pagename');
@@ -22,7 +22,6 @@ Template Name: Page validation
                 ?>
                 <h1 class="text-center text-md-left"><span><?php the_title(); ?></span></h1>
                 <ul id="menu-shop">
-                    <li><a href="compte"><i class="fas fa-user"><span>Compte</span></i></a></li>
                     <li><a href="boutique"><i class="fas fa-store"><span>Boutique</span></i></a></li>
                     <li><a href="panier"><i class="fas fa-shopping-basket"><span>Panier</span></i></a></li>
                 </ul>
@@ -30,10 +29,9 @@ Template Name: Page validation
             endwhile;
         endif; ?>
 
-        <div class="row content-validation">
-            <div><?php the_content(); ?></div>
+        <div class="row content-compte">
+            <?php the_content(); ?>
         </div>
-
     </section>
 </main>
 <?php do_action('display_footer', 'bysshe_footer'); ?>
